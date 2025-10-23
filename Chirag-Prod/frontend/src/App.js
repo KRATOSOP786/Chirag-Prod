@@ -130,11 +130,11 @@ const App = () => {
     const receiptId = "enrollment_" + Date.now()
 
     // 1) Create order on backend
-    const createRes = await fetch("http://localhost:5000/create-order", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount, currency, receipt: receiptId }),
-    })
+    const createRes = await fetch(`${process.env.REACT_APP_BACKEND_URL}/create-order`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ amount, currency, receipt: receiptId }),
+})
 
     if (!createRes.ok) {
       const err = await createRes.json().catch(() => ({}))
@@ -162,7 +162,7 @@ const App = () => {
           }
 
           // Validate payment with backend
-          const validateRes = await fetch("http://localhost:5000/order/validate", {
+          const validateRes = await fetch(`${process.env.REACT_APP_BACKEND_URL}/order/validate`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(razorpayResponse),
@@ -268,7 +268,7 @@ const handleBackToForm = () => {
   setIsSubmitting(true);
 
   try {
-    const response = await fetch("http://localhost:5000/api/contact", {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
