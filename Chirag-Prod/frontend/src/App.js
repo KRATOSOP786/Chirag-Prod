@@ -125,8 +125,8 @@ const App = () => {
   setIsSubmitting(true)
 
   try {
-    const amount = 500 // rupees
-    const currency = "INR"
+    const amount = 50 * 100 // rupees
+    const currency = "USD"
     const receiptId = "enrollment_" + Date.now()
 
     // 1) Create order on backend
@@ -463,11 +463,11 @@ const handleBackToForm = () => {
       </header>
 
       {/* Minimal Notification Banner */}
-      <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 backdrop-blur-sm border-b border-orange-500/30 py-2 px-4">
+      <div className="sticky top-16 z-50 bg-gradient-to-r from-orange-500/20 to-red-500/20 backdrop-blur-sm border-b border-orange-500/30 py-2 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-center space-x-3 text-sm">
             <Calendar className="h-4 w-4 text-orange-400" />
-            <span className="text-orange-100 font-medium">Next Batch Starts 04 November 2025</span>
+            <span className="text-orange-100 font-medium">Next Batch Starts 04 December 2025</span>
             <span className="text-orange-300">•</span>
             <span className="text-orange-200 text-xs">Limited Seats Available!</span>
           </div>
@@ -877,11 +877,31 @@ const handleBackToForm = () => {
               </div>
               {/* Early Bird Badge */}
              <div className="absolute -top-4 -right-4 z-20">
-        <div className="flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-4 py-2 text-xs font-bold shadow-lg rounded-full px-5 py-3 shadow-xl transform rotate-45 origin-center mt-[30px]">
-          {/* Pulsing dot indicator */}
-          {/* <div className="w-2.5 h-2.5 bg-white rounded-full animate-pulse"></div> */}
-          <span className="text-white text-sm font-bold">🔥EARLY BIRD</span>
-        </div>
+      <div className="flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-5 py-3 text-sm font-bold shadow-xl transform rotate-45 origin-center mt-[30px] rounded-[7px] animate-soft-blink">
+        <span className="text-white font-bold">🔥 EARLY BIRD</span>
+      </div>
+      <style>
+{`
+@keyframes soft-blink {
+  0% {
+    opacity: 1;
+   
+  }
+  50% {
+    opacity: 0.4;
+    
+  }
+  100% {
+    opacity: 1;
+    
+  }
+}
+
+.animate-soft-blink {
+  animation: soft-blink 2s ease-in-out infinite;
+}
+`}
+</style>
       </div>
 
 
@@ -1520,13 +1540,13 @@ const handleBackToForm = () => {
                           <div className="space-y-4 mb-8">
                             <div className="flex justify-between items-center text-gray-300">
                               <span>Registration Fee (Fully Adjustable in Total Course Fee)</span>
-                              <span className="text-xl font-bold text-white">₹500</span>
+                              <span className="text-xl font-bold text-white">$50</span>
                             </div>
                             <div className="border-t border-slate-600"></div>
                             <div className="flex justify-between items-center">
                               <span className="text-white font-semibold">Total Amount</span>
                               <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                                ₹500
+                                $50
                               </span>
                             </div>
                           </div>
@@ -1546,31 +1566,15 @@ const handleBackToForm = () => {
                                 <svg className="h-6 w-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                                 </svg>
-                                Pay ₹500 Now
+                                Pay $50 Now
                               </>
                             )}
                           </button>
 
-                          <div className="mt-6 space-y-3 text-sm text-gray-400">
-                            <div className="flex items-center">
-                              <svg className="h-5 w-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-                              </svg>
-                              <span>🔒 100% Secure Payment</span>
-                            </div>
-                            <div className="flex items-center">
-                              <svg className="h-5 w-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-                              </svg>
-                              <span>⚡ Instant Confirmation</span>
-                            </div>
-
-                            <div className="flex items-center">
-                              <svg className="h-5 w-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-                              </svg>
-                              <span>📩 Receipt via Email</span>
-                            </div>
+                          <div className="mt-6 flex items-center justify-center gap-6 text-sm text-gray-400">
+                            <span>🔒 100% Secure Payment</span>
+                            <span>⚡ Instant Confirmation</span>
+                            <span>📩 Receipt via Email</span>
                           </div>
                           
                         </div>

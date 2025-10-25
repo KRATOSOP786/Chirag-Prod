@@ -41,7 +41,7 @@ app.post('/create-order', async (req, res) => {
     }
 
     const options = {
-      amount: Number(amount) * 100, // paise
+      amount: Number(amount), // paise
       currency,
       receipt: receipt || `receipt_${Date.now()}`,
     };
