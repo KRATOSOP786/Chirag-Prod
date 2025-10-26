@@ -125,7 +125,7 @@ const App = () => {
   setIsSubmitting(true)
 
   try {
-    const amount = 50 * 100 // rupees
+    const amount = 100 * 100 // cents
     const currency = "USD"
     const receiptId = "enrollment_" + Date.now()
 
@@ -463,7 +463,7 @@ const handleBackToForm = () => {
       </header>
 
       {/* Minimal Notification Banner */}
-      <div className="sticky top-16 z-50 bg-gradient-to-r from-orange-500/20 to-red-500/20 backdrop-blur-sm border-b border-orange-500/30 py-2 px-4">
+      <div className="top-16 z-50 bg-gradient-to-r from-orange-500/20 to-red-500/20 backdrop-blur-sm border-b border-orange-500/30 py-2 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-center space-x-3 text-sm">
             <Calendar className="h-4 w-4 text-orange-400" />
@@ -878,7 +878,7 @@ const handleBackToForm = () => {
               {/* Early Bird Badge */}
              <div className="absolute -top-4 -right-4 z-20">
       <div className="flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-5 py-3 text-sm font-bold shadow-xl transform rotate-45 origin-center mt-[30px] rounded-[7px] animate-soft-blink">
-        <span className="text-white font-bold">🔥 EARLY BIRD</span>
+        <span className="text-white font-bold"> EARLY BIRD</span>
       </div>
       <style>
 {`
@@ -1514,7 +1514,7 @@ const handleBackToForm = () => {
                 <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 p-1">
                   <div className="bg-slate-800/80 rounded-3xl">
                     <div className="pb-6 pt-8 px-8 text-center">
-                      <h3 className="text-3xl text-white mb-3 font-bold">Reserve Your Spot – SDET Bootcamp Registration Fee</h3>
+                      <h3 className="text-3xl text-white mb-3 font-bold">SDET Bootcamp Registration Fee</h3>
                       <p className="text-gray-300 text-lg leading-relaxed">
                         Seats fill up fast! Confirm your spot in the coming batch with a little one-time registration fee.
                       </p>
@@ -1523,30 +1523,37 @@ const handleBackToForm = () => {
                     <div className="px-8 pb-8">
                       <div className="space-y-8">
                         {/* Limited Seats Badge */}
-                        <div className="flex justify-center">
-                          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500/20 to-purple-600/20 border border-purple-500/50 rounded-full">
-                            <svg className="h-5 w-5 text-purple-400 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
-                            </svg>
-                            <span className="text-purple-300 font-semibold">Limited Seats Left – Enroll Before the Batch Fills!</span>
-                          </div>
-                        </div>
+                        <div className="flex justify-center mt-6">
+  <div className="relative inline-block rounded-full p-[2px] bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 animate-border-rotate shadow-[0_0_10px_rgba(236,72,153,0.6)]">
+    <div className="flex flex-col sm:flex-row items-center justify-center text-center gap-1 sm:gap-2 px-6 py-3 bg-slate-900 rounded-full text-purple-300 font-semibold ">
+      {/* <svg
+        className="h-5 w-5 text-purple-400 mr-1"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+      </svg> */}
+      <span>⚡ Limited Seats Left – Enroll Before the Batch Fills!</span>
+    </div>
+  </div>
+</div>
+
 
                         {/* Payment Info */}
                         <div className="bg-slate-700/50 rounded-2xl p-8 border border-slate-600">
-                          <h4 className="text-2xl text-white font-bold mb-2">Pay Registration Fee</h4>
+                          <h4 className="text-2xl text-white font-bold mb-2">Complete Your Enrollment</h4>
                           <p className="text-gray-400 mb-6">Secure payment powered by Razorpay</p>
 
                           <div className="space-y-4 mb-8">
                             <div className="flex justify-between items-center text-gray-300">
                               <span>Registration Fee (Fully Adjustable in Total Course Fee)</span>
-                              <span className="text-xl font-bold text-white">$50</span>
+                              <span className="text-xl font-bold text-white">$100</span>
                             </div>
                             <div className="border-t border-slate-600"></div>
                             <div className="flex justify-between items-center">
                               <span className="text-white font-semibold">Total Amount</span>
                               <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                                $50
+                                $100
                               </span>
                             </div>
                           </div>
@@ -1566,7 +1573,7 @@ const handleBackToForm = () => {
                                 <svg className="h-6 w-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                                 </svg>
-                                Pay $50 Now
+                                Pay $100 Now
                               </>
                             )}
                           </button>
