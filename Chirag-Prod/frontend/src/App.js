@@ -1533,7 +1533,7 @@ const handleBackToForm = () => {
       >
         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
       </svg> */}
-      <span>⚡ Limited Seats Left – Enroll Before the Batch Fills!</span>
+      <span>⚡ Limited Seats Left – Enroll Before the Batch Closes!</span>
     </div>
   </div>
 </div>
@@ -1545,16 +1545,14 @@ const handleBackToForm = () => {
                           <p className="text-gray-400 mb-6">Secure payment powered by Razorpay</p>
 
                           <div className="space-y-4 mb-8">
-                            <div className="flex justify-between items-center text-gray-300">
+                            <div className="flex justify-between items-center text-gray-300 font-bold">
                               <span>Registration Fee (Fully Adjustable in Total Course Fee)</span>
                               <span className="text-xl font-bold text-white">$100</span>
                             </div>
                             <div className="border-t border-slate-600"></div>
                             <div className="flex justify-between items-center">
-                              <span className="text-white font-semibold">Total Amount</span>
-                              <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                                $100
-                              </span>
+                             
+                              
                             </div>
                           </div>
 
